@@ -7,13 +7,24 @@ Here is implemented a file system store to save all deployments data in a specif
 
 ## The store plugin in few steps
 
-- Define an exported plugin "symbol" Store 
+- Define an exported plugin "symbol" Store
+
+```
  var Store fileStore
+ ```
  
 - In the init function of main.go, instantiate the Store previously declared
 
 - The store implementation has to implement yorc storage.Store interface (file_store.go)
-** Note the Types() method determines which store type(s) is concerned **
+Note the Types() method determines which store type(s) is concerned
+
+```
+func (s *fileStore) Types() []types.StoreType {
+	t := make([]types.StoreType, 0)
+	t = append(t, types.StoreTypeDeployment)
+	return t
+}
+```
 
 
 ## How to build
