@@ -18,6 +18,6 @@ export CGO_ENABLED=1
 
 build:
 	@echo "--> Running go build"
-	@cd src && go fmt && go build -buildmode=plugin -o ../bin/file_store_deployments.so
+	@cd src && go fmt && go build -buildmode=plugin -o ../bin/store_deployments.so
 
 .PHONY: build

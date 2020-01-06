@@ -26,6 +26,10 @@ func (s *fileStore) Types() []types.StoreType {
 }
 ```
 
+- The store plugin binary must be named store_*.so to be loaded by yorc.
+
+- If you use other standard Yorc plugins (HashiCorp RPC) for delegate/operations by example, you need to compile them with CGO_ENABLED=1 and with the
+reference to the Yorc local version in the go.mod file as it's done here.
 
 ## How to build
 
